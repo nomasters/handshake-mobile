@@ -1,0 +1,8 @@
+plugins {
+    id "org.golang.mobile.bind" version "0.2.13"
+}
+gobind {
+    pkg = "github.com/nomasters/handshake"
+    GOPATH = "/Users/nathan"
+    GO = "/usr/local/bin/go"
+}
