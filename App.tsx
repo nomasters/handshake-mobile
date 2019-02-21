@@ -10,7 +10,7 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, NativeModules } from "react-native";
-var RNHandshakeChat = NativeModules.RNHandshakeChat;
+import Version from "./components/Version";
 
 const instructions = Platform.select({
   ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
@@ -25,16 +25,11 @@ export default class App extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.welcome}>No Really! It works {version}</Text>
+        <Version />
       </View>
     );
   }
 }
-
-var version = "0";
-RNHandshakeChat.Version("")
-  .then((result: string) => (version = result))
-  .catch((err: any) => console.log(err));
 
 const styles = StyleSheet.create({
   container: {
